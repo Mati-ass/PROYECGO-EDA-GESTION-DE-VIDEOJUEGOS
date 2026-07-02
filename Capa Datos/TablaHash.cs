@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic; // Necesario para usar List<>
+
 namespace Capa_Datos
 {
     public class TablaHash
@@ -29,8 +31,8 @@ namespace Capa_Datos
         public void Insertar(Videojuego j)
         {
             int indice = FuncionHash(j.Id);
-         
-            if (tabla[indice].Buscar(j.Id) == null) // Verificar si el juego ya existe en la lista enlazada
+
+            if (tabla[indice].Buscar(j.Id) == null)
             {
                 tabla[indice].InsertarFinal(j);
                 Console.WriteLine($"Juego '{j.Titulo}' ingresado al inventario.");
@@ -54,6 +56,25 @@ namespace Capa_Datos
             {
                 Console.WriteLine("Juego no encontrado.");
             }
+        }
+
+        // NUEVO MÉTODO CONECTADO A TU LISTA ENLAZADA
+        public List<Videojuego> ObtenerTodos()
+        {
+            List<Videojuego> listaCompleta = new List<Videojuego>();
+
+            for (int i = 0; i < capacidad; i++)
+            {
+                // Accedemos a la propiedad Cabeza que agregamos a tu ListaEnlazada
+                Nodo actual = tabla[i].Cabeza;
+
+                while (actual != null)
+                {
+                    listaCompleta.Add(actual.Dato);
+                    actual = actual.Siguiente;
+                }
+            }
+            return listaCompleta;
         }
     }
 }

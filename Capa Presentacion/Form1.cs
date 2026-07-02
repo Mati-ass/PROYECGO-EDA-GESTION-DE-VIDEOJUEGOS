@@ -7,7 +7,7 @@ namespace Capa_Presentacion
 {
     public partial class Login : Form
     {
- 
+
         private Capa_Logica.SistemaNovas miSistema = new Capa_Logica.SistemaNovas();
 
         public Login()
@@ -37,14 +37,14 @@ namespace Capa_Presentacion
                 //Aquí abriremos el Menú Principal y le pasaremos el Rol (COMENTANTADO PQ AUN NO ESTÁ IMPLEMENTADO)
                 FormMenuPrincipal menu = new FormMenuPrincipal(usuarioLogueado.Rol);
                 menu.Show();
-                this.Hide(); 
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Nombre de usuario o contraseña incorrectos.",
                                 "Error de Acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-             
+
                 tbPassword.Clear();
                 tbNameUser.Focus();
             }
@@ -52,5 +52,10 @@ namespace Capa_Presentacion
 
         private void label1_Click(object sender, EventArgs e) { }
         private void label2_Click(object sender, EventArgs e) { }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

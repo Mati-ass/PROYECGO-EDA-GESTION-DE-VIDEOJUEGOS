@@ -11,7 +11,10 @@ namespace Capa_Datos
             cabeza = null;
             longitud = 0;
         }
-
+        public Nodo Cabeza
+        {
+            get { return cabeza; }
+        }
         public void InsertarFinal(Videojuego v)
         {
             Nodo nuevo = new Nodo(v);
