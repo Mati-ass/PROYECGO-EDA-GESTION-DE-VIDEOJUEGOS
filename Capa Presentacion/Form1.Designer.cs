@@ -39,10 +39,11 @@
             // lblProgramaTitulo
             // 
             lblProgramaTitulo.AutoSize = true;
-            lblProgramaTitulo.Font = new Font("Segoe UI", 20F);
-            lblProgramaTitulo.Location = new Point(360, 63);
+            lblProgramaTitulo.Font = new Font("Verdana", 20.25F, FontStyle.Bold);
+            lblProgramaTitulo.ForeColor = SystemColors.HotTrack;
+            lblProgramaTitulo.Location = new Point(315, 47);
             lblProgramaTitulo.Name = "lblProgramaTitulo";
-            lblProgramaTitulo.Size = new Size(218, 46);
+            lblProgramaTitulo.Size = new Size(213, 32);
             lblProgramaTitulo.TabIndex = 0;
             lblProgramaTitulo.Text = "Nova gestion";
             lblProgramaTitulo.Click += label1_Click;
@@ -50,30 +51,29 @@
             // tbNameUser
             // 
             tbNameUser.Font = new Font("Segoe UI", 12F);
-            tbNameUser.Location = new Point(167, 193);
-            tbNameUser.Margin = new Padding(3, 4, 3, 4);
+            tbNameUser.ForeColor = SystemColors.WindowText;
+            tbNameUser.Location = new Point(146, 145);
             tbNameUser.Name = "tbNameUser";
-            tbNameUser.Size = new Size(511, 34);
+            tbNameUser.Size = new Size(448, 29);
             tbNameUser.TabIndex = 1;
             // 
             // tbPassword
             // 
             tbPassword.Font = new Font("Segoe UI", 12F);
-            tbPassword.Location = new Point(167, 332);
-            tbPassword.Margin = new Padding(3, 4, 3, 4);
+            tbPassword.Location = new Point(146, 249);
             tbPassword.Name = "tbPassword";
             tbPassword.PasswordChar = '*';
-            tbPassword.Size = new Size(511, 34);
+            tbPassword.Size = new Size(448, 29);
             tbPassword.TabIndex = 2;
             tbPassword.TextChanged += tbPassword_TextChanged;
             // 
             // lblNameUser
             // 
             lblNameUser.AutoSize = true;
-            lblNameUser.Font = new Font("Segoe UI", 12F);
-            lblNameUser.Location = new Point(167, 161);
+            lblNameUser.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNameUser.Location = new Point(146, 121);
             lblNameUser.Name = "lblNameUser";
-            lblNameUser.Size = new Size(185, 28);
+            lblNameUser.Size = new Size(181, 18);
             lblNameUser.TabIndex = 3;
             lblNameUser.Text = "Nombre de usuario:";
             lblNameUser.Click += label2_Click;
@@ -81,19 +81,19 @@
             // lblPassword
             // 
             lblPassword.AutoSize = true;
-            lblPassword.Font = new Font("Segoe UI", 12F);
-            lblPassword.Location = new Point(165, 304);
+            lblPassword.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPassword.Location = new Point(144, 228);
             lblPassword.Name = "lblPassword";
-            lblPassword.Size = new Size(114, 28);
+            lblPassword.Size = new Size(116, 18);
             lblPassword.TabIndex = 4;
             lblPassword.Text = "Contraseña:";
             // 
             // btnIngresar
             // 
-            btnIngresar.Location = new Point(421, 473);
-            btnIngresar.Margin = new Padding(3, 4, 3, 4);
+            btnIngresar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnIngresar.Location = new Point(368, 355);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(86, 31);
+            btnIngresar.Size = new Size(90, 37);
             btnIngresar.TabIndex = 5;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
@@ -101,16 +101,16 @@
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(btnIngresar);
             Controls.Add(lblPassword);
             Controls.Add(lblNameUser);
             Controls.Add(tbPassword);
             Controls.Add(tbNameUser);
             Controls.Add(lblProgramaTitulo);
-            Margin = new Padding(3, 4, 3, 4);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             Name = "Login";
             Text = "Form1";
             Load += Login_Load;
