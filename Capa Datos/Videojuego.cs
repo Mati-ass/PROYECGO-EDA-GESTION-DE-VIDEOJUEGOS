@@ -9,8 +9,9 @@
         public int Stock { get; set; }
         public int Ventas { get; set; }
         public int HorasJugadas { get; set; }
+        public double Precio { get; set; }
 
-        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial)
+        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial, double precio)
         {
             Id = id;
             Titulo = titulo;
@@ -19,6 +20,8 @@
             Stock = stockInicial;
             Ventas = 0;
             HorasJugadas = 0;
+            Precio = precio;
+            Stock = stockInicial;
         }
 
         public void ActualizarStock(int cant)
