@@ -18,7 +18,7 @@ namespace Capa_Presentacion
         // INSTANCIA GLOBAL DE LA TABLA HASH: Aquí se guardará el inventario en memoria.
         // Capacidad inicial de ejemplo: 100 cubetas
         private TablaHash inventarioVideojuegos = new TablaHash(100);
-
+        
         public FormMenuPrincipal(string rol)
         {
             InitializeComponent();
@@ -27,6 +27,7 @@ namespace Capa_Presentacion
 
         private void FormMenuPrincipal_Load(object sender, EventArgs e)
         {
+            cargarDatos();
             this.CenterToScreen();
             lblBienvenida.Text = $"Sistema NOVAS - Rol actual: {rolUsuario}";
 
@@ -103,7 +104,15 @@ namespace Capa_Presentacion
                 }
             }
         }
-
+        private void cargarDatos()
+        {
+            Videojuego v1 = new Videojuego("GTA5", "Grand Theft Auto 5", "PC", "Acción", 10, 60);
+            Videojuego v2 = new Videojuego("MINE", "Minecraft", "PC", "Aventura", 46, 30); 
+            Videojuego v3 = new Videojuego("LOL", "League of Legends", "PC", "Acción", 8, 15); 
+            inventarioVideojuegos.Insertar(v1);
+            inventarioVideojuegos.Insertar(v2);
+            inventarioVideojuegos.Insertar(v3);
+        }
         private void btnBuscar_Click_1(object sender, EventArgs e)
         {
 
