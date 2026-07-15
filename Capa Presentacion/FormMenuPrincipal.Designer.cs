@@ -35,6 +35,7 @@
             btnRanking = new Button();
             btnSalir = new Button();
             btnEliminar = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // lblBienvenida
@@ -42,18 +43,18 @@
             lblBienvenida.AutoSize = true;
             lblBienvenida.Font = new Font("Verdana", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBienvenida.ForeColor = SystemColors.HotTrack;
-            lblBienvenida.Location = new Point(52, 59);
+            lblBienvenida.Location = new Point(95, 88);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(409, 32);
+            lblBienvenida.Size = new Size(0, 32);
             lblBienvenida.TabIndex = 0;
-            lblBienvenida.Text = "Bienvenido a Nova Sistem";
-            lblBienvenida.TextAlign = ContentAlignment.TopCenter;
+            lblBienvenida.TextAlign = ContentAlignment.MiddleCenter;
+            lblBienvenida.Click += lblBienvenida_Click_1;
             // 
             // btnRegistrar
             // 
             btnRegistrar.Cursor = Cursors.Hand;
             btnRegistrar.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnRegistrar.Location = new Point(210, 301);
+            btnRegistrar.Location = new Point(41, 144);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.Size = new Size(179, 67);
             btnRegistrar.TabIndex = 1;
@@ -65,7 +66,7 @@
             // 
             btnBuscar.Cursor = Cursors.Hand;
             btnBuscar.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnBuscar.Location = new Point(210, 155);
+            btnBuscar.Location = new Point(41, 217);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(179, 67);
             btnBuscar.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             btnEstadisticas.Cursor = Cursors.Hand;
             btnEstadisticas.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnEstadisticas.Location = new Point(395, 155);
+            btnEstadisticas.Location = new Point(226, 217);
             btnEstadisticas.Name = "btnEstadisticas";
             btnEstadisticas.Size = new Size(179, 67);
             btnEstadisticas.TabIndex = 3;
@@ -89,7 +90,7 @@
             // 
             btnRanking.Cursor = Cursors.Hand;
             btnRanking.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnRanking.Location = new Point(395, 228);
+            btnRanking.Location = new Point(41, 290);
             btnRanking.Name = "btnRanking";
             btnRanking.Size = new Size(179, 67);
             btnRanking.TabIndex = 4;
@@ -101,19 +102,19 @@
             // 
             btnSalir.Cursor = Cursors.Hand;
             btnSalir.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnSalir.Location = new Point(210, 228);
+            btnSalir.Location = new Point(226, 290);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(179, 67);
             btnSalir.TabIndex = 5;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
-            btnSalir.Click += btnSalir_Click_1;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.Cursor = Cursors.Hand;
             btnEliminar.Font = new Font("Dubai", 16F, FontStyle.Bold);
-            btnEliminar.Location = new Point(395, 301);
+            btnEliminar.Location = new Point(226, 144);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(179, 67);
             btnEliminar.TabIndex = 6;
@@ -121,12 +122,24 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Forte", 35.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.HotTrack;
+            label1.Location = new Point(47, 17);
+            label1.Name = "label1";
+            label1.Size = new Size(354, 51);
+            label1.TabIndex = 7;
+            label1.Text = "Sistema NOVAS";
+            // 
             // FormMenuPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(440, 450);
+            Controls.Add(label1);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalir);
             Controls.Add(btnRanking);
@@ -134,8 +147,8 @@
             Controls.Add(btnBuscar);
             Controls.Add(btnRegistrar);
             Controls.Add(lblBienvenida);
-            MaximumSize = new Size(816, 489);
-            MinimumSize = new Size(816, 489);
+            MaximumSize = new Size(516, 489);
+            MinimumSize = new Size(456, 489);
             Name = "FormMenuPrincipal";
             Text = "Nova sistem";
             Load += FormMenuPrincipal_Load;
@@ -152,5 +165,7 @@
         private Button btnRanking;
         private Button btnSalir;
         private Button btnEliminar;
+        private Label label1;
+        private CheckBox checkBox1;
     }
 }

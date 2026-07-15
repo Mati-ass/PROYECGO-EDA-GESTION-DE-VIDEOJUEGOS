@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Datos;
+using Capa_Logica;
 
 namespace Capa_Presentacion
 {
     public partial class FormBuscarVideojuego : Form
     {
-        private TablaHash inventario;
+        private SistemaNovas miSistema;
 
-        // Recibimos la tabla hash desde el menú principal
-        public FormBuscarVideojuego(TablaHash tablaPrincipal)
+        // Recibimos la tabla hash
+        public FormBuscarVideojuego(SistemaNovas sistemaPrincipal)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.inventario = tablaPrincipal;
+            this.miSistema = sistemaPrincipal;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace Capa_Presentacion
             }
 
             // Usamos el método Buscar de tu TablaHash
-            Videojuego juegoEncontrado = inventario.Buscar(id);
+            Videojuego juegoEncontrado = miSistema.BuscarJuego(id);
 
             if (juegoEncontrado != null)
             {

@@ -8,25 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Datos;
+using Capa_Logica;
 
 namespace Capa_Presentacion
 {
     public partial class FormEstadisticas : Form
     {
-        private TablaHash inventario;
+        private SistemaNovas miSistema;
 
-        public FormEstadisticas(TablaHash tablaPrincipal)
+        public FormEstadisticas(SistemaNovas sistemaPrincipal)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.inventario = tablaPrincipal;
+            this.miSistema = sistemaPrincipal;
         }
 
         private void FormEstadisticas_Load(object sender, EventArgs e)
         {
-            List<Videojuego> lista = inventario.ObtenerTodos();
+            List<Videojuego> lista = miSistema.ObtenerListaDeJuegos();
 
-            if (lista.Count == 0)
+            if (lista.Count == 0 || lista == null)
             {
                 MessageBox.Show("No hay videojuegos registrados para generar estadísticas.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -59,6 +60,11 @@ namespace Capa_Presentacion
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lblTituloVentana_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

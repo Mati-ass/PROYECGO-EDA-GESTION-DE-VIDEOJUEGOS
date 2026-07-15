@@ -11,7 +11,10 @@
         public int HorasJugadas { get; set; }
         public double Precio { get; set; }
 
-        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial, double precio)
+        private string rutaImagen;
+        public string RutaImagen { get => rutaImagen; set => rutaImagen = value; }
+        public Videojuego() { }
+        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial, double precio, string rutaImagen="")
         {
             Id = id;
             Titulo = titulo;
@@ -22,6 +25,7 @@
             HorasJugadas = 0;
             Precio = precio;
             Stock = stockInicial;
+            RutaImagen = rutaImagen;
         }
 
         public void ActualizarStock(int cant)

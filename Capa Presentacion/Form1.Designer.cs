@@ -38,21 +38,23 @@
             // 
             // lblProgramaTitulo
             // 
+            lblProgramaTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lblProgramaTitulo.AutoSize = true;
-            lblProgramaTitulo.Font = new Font("Verdana", 20.25F, FontStyle.Bold);
+            lblProgramaTitulo.Font = new Font("Forte", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProgramaTitulo.ForeColor = SystemColors.HotTrack;
-            lblProgramaTitulo.Location = new Point(315, 47);
+            lblProgramaTitulo.Location = new Point(280, 42);
             lblProgramaTitulo.Name = "lblProgramaTitulo";
-            lblProgramaTitulo.Size = new Size(213, 32);
+            lblProgramaTitulo.Size = new Size(258, 44);
             lblProgramaTitulo.TabIndex = 0;
             lblProgramaTitulo.Text = "Nova gestion";
             lblProgramaTitulo.Click += label1_Click;
             // 
             // tbNameUser
             // 
+            tbNameUser.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             tbNameUser.Font = new Font("Segoe UI", 12F);
             tbNameUser.ForeColor = SystemColors.WindowText;
-            tbNameUser.Location = new Point(146, 145);
+            tbNameUser.Location = new Point(145, 145);
             tbNameUser.Name = "tbNameUser";
             tbNameUser.Size = new Size(448, 29);
             tbNameUser.TabIndex = 1;
@@ -90,10 +92,12 @@
             // 
             // btnIngresar
             // 
+            btnIngresar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btnIngresar.Cursor = Cursors.Hand;
             btnIngresar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnIngresar.Location = new Point(368, 355);
             btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(90, 37);
+            btnIngresar.Size = new Size(89, 37);
             btnIngresar.TabIndex = 5;
             btnIngresar.Text = "Ingresar";
             btnIngresar.UseVisualStyleBackColor = true;
@@ -103,7 +107,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(799, 451);
             Controls.Add(btnIngresar);
             Controls.Add(lblPassword);
             Controls.Add(lblNameUser);
@@ -111,6 +115,8 @@
             Controls.Add(tbNameUser);
             Controls.Add(lblProgramaTitulo);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Login";
             Text = "Form1";
             Load += Login_Load;

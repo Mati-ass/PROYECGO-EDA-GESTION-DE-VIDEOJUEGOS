@@ -8,24 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Datos;
+using Capa_Logica;
 
 namespace Capa_Presentacion
 {
     public partial class FormRanking : Form
     {
-        private TablaHash inventario;
+        private SistemaNovas miSistema;
 
-        public FormRanking(TablaHash tablaPrincipal)
+        public FormRanking(SistemaNovas sistemaPrincipal)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.inventario = tablaPrincipal;
+            this.miSistema = sistemaPrincipal;
         }
 
         private void btnTopPrecio_Click(object sender, EventArgs e)
         {
-            List<Videojuego> lista = inventario.ObtenerTodos();
-            if (lista.Count == 0) { txtRanking.Text = "No hay datos."; return; }
+            List<Videojuego> lista = miSistema.ObtenerListaDeJuegos();
+            if (lista.Count == 0 || lista == null) { txtRanking.Text = "No hay datos."; return; }
 
             // Método clásico de ordenamiento Burbuja Descendente (por precio)
             for (int i = 0; i < lista.Count - 1; i++)
@@ -46,7 +47,7 @@ namespace Capa_Presentacion
 
         private void btnTopStock_Click(object sender, EventArgs e)
         {
-            List<Videojuego> lista = inventario.ObtenerTodos();
+            List<Videojuego> lista = miSistema.ObtenerListaDeJuegos();
             if (lista.Count == 0) { txtRanking.Text = "No hay datos."; return; }
 
             // Método Burbuja Descendente (por stock)

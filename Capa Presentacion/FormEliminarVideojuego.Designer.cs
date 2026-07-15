@@ -17,52 +17,61 @@
 
         private void InitializeComponent()
         {
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblId = new Label();
+            txtId = new TextBox();
+            btnEliminar = new Button();
+            btnCancelar = new Button();
+            SuspendLayout();
             // 
             // lblId
             // 
-            this.lblId.Location = new System.Drawing.Point(30, 40);
-            this.lblId.Text = "ID del Videojuego:";
-            this.lblId.Size = new System.Drawing.Size(120, 20);
+            lblId.Location = new Point(30, 40);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(120, 20);
+            lblId.TabIndex = 0;
+            lblId.Text = "ID del Videojuego:";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(160, 37);
-            this.txtId.Size = new System.Drawing.Size(180, 20);
+            txtId.Location = new Point(160, 37);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(180, 23);
+            txtId.TabIndex = 1;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(60, 90);
-            this.btnEliminar.Size = new System.Drawing.Size(110, 35);
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            btnEliminar.Location = new Point(190, 90);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(110, 35);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(190, 90);
-            this.btnCancelar.Size = new System.Drawing.Size(110, 35);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new Point(60, 90);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(110, 35);
+            btnCancelar.TabIndex = 3;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // FormEliminarVideojuego
             // 
-            this.ClientSize = new System.Drawing.Size(380, 160);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnCancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.Name = "FormEliminarVideojuego";
-            this.Text = "Eliminar Videojuego del Inventario";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(380, 160);
+            Controls.Add(lblId);
+            Controls.Add(txtId);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnCancelar);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            Name = "FormEliminarVideojuego";
+            Text = "Eliminar Videojuego del Inventario";
+            Load += FormEliminarVideojuego_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

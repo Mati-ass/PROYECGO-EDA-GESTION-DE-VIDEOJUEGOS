@@ -58,14 +58,12 @@ namespace Capa_Datos
             }
         }
 
-        // NUEVO MÉTODO CONECTADO A TU LISTA ENLAZADA
         public List<Videojuego> ObtenerTodos()
         {
             List<Videojuego> listaCompleta = new List<Videojuego>();
 
             for (int i = 0; i < capacidad; i++)
             {
-                // Accedemos a la propiedad Cabeza que agregamos a tu ListaEnlazada
                 Nodo actual = tabla[i].Cabeza;
 
                 while (actual != null)

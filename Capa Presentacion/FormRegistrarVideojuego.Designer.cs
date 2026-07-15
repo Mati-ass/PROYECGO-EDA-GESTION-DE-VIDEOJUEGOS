@@ -17,128 +17,183 @@
 
         private void InitializeComponent()
         {
-            this.lblId = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.txtTitulo = new System.Windows.Forms.TextBox();
-            this.lblPlataforma = new System.Windows.Forms.Label();
-            this.txtPlataforma = new System.Windows.Forms.TextBox();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.lblStock = new System.Windows.Forms.Label();
-            this.txtStock = new System.Windows.Forms.TextBox();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblId = new Label();
+            txtId = new TextBox();
+            lblTitulo = new Label();
+            txtTitulo = new TextBox();
+            lblPlataforma = new Label();
+            txtPlataforma = new TextBox();
+            lblCategoria = new Label();
+            txtCategoria = new TextBox();
+            lblStock = new Label();
+            txtStock = new TextBox();
+            lblPrecio = new Label();
+            txtPrecio = new TextBox();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            btnExaminarImagen = new Button();
+            pbCaratula = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbCaratula).BeginInit();
+            SuspendLayout();
             // 
             // lblId
             // 
-            this.lblId.Location = new System.Drawing.Point(30, 30);
-            this.lblId.Text = "ID del Videojuego:";
-            this.lblId.Size = new System.Drawing.Size(120, 20);
+            lblId.Location = new Point(30, 30);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(120, 20);
+            lblId.TabIndex = 0;
+            lblId.Text = "ID del Videojuego:";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(160, 27);
-            this.txtId.Size = new System.Drawing.Size(180, 20);
+            txtId.Location = new Point(160, 27);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(180, 23);
+            txtId.TabIndex = 1;
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Location = new System.Drawing.Point(30, 70);
-            this.lblTitulo.Text = "Título:";
-            this.lblTitulo.Size = new System.Drawing.Size(120, 20);
+            lblTitulo.Location = new Point(30, 70);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(120, 20);
+            lblTitulo.TabIndex = 2;
+            lblTitulo.Text = "Título:";
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(160, 67);
-            this.txtTitulo.Size = new System.Drawing.Size(180, 20);
+            txtTitulo.Location = new Point(160, 67);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(180, 23);
+            txtTitulo.TabIndex = 3;
             // 
             // lblPlataforma
             // 
-            this.lblPlataforma.Location = new System.Drawing.Point(30, 110);
-            this.lblPlataforma.Text = "Plataforma:";
-            this.lblPlataforma.Size = new System.Drawing.Size(120, 20);
+            lblPlataforma.Location = new Point(30, 110);
+            lblPlataforma.Name = "lblPlataforma";
+            lblPlataforma.Size = new Size(120, 20);
+            lblPlataforma.TabIndex = 4;
+            lblPlataforma.Text = "Plataforma:";
             // 
             // txtPlataforma
             // 
-            this.txtPlataforma.Location = new System.Drawing.Point(160, 107);
-            this.txtPlataforma.Size = new System.Drawing.Size(180, 20);
+            txtPlataforma.Location = new Point(160, 107);
+            txtPlataforma.Name = "txtPlataforma";
+            txtPlataforma.Size = new Size(180, 23);
+            txtPlataforma.TabIndex = 5;
             // 
             // lblCategoria
             // 
-            this.lblCategoria.Location = new System.Drawing.Point(30, 150);
-            this.lblCategoria.Text = "Categoría:";
-            this.lblCategoria.Size = new System.Drawing.Size(120, 20);
+            lblCategoria.Location = new Point(30, 150);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(120, 20);
+            lblCategoria.TabIndex = 6;
+            lblCategoria.Text = "Categoría:";
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(160, 147);
-            this.txtCategoria.Size = new System.Drawing.Size(180, 20);
+            txtCategoria.Location = new Point(160, 147);
+            txtCategoria.Name = "txtCategoria";
+            txtCategoria.Size = new Size(180, 23);
+            txtCategoria.TabIndex = 7;
             // 
             // lblStock
             // 
-            this.lblStock.Location = new System.Drawing.Point(30, 190);
-            this.lblStock.Text = "Stock Inicial:";
-            this.lblStock.Size = new System.Drawing.Size(120, 20);
+            lblStock.Location = new Point(30, 190);
+            lblStock.Name = "lblStock";
+            lblStock.Size = new Size(120, 20);
+            lblStock.TabIndex = 8;
+            lblStock.Text = "Stock Inicial:";
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(160, 187);
-            this.txtStock.Size = new System.Drawing.Size(180, 20);
+            txtStock.Location = new Point(160, 187);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(180, 23);
+            txtStock.TabIndex = 9;
             // 
             // lblPrecio
             // 
-            this.lblPrecio.Location = new System.Drawing.Point(30, 230);
-            this.lblPrecio.Text = "Precio:";
-            this.lblPrecio.Size = new System.Drawing.Size(120, 20);
+            lblPrecio.Location = new Point(30, 230);
+            lblPrecio.Name = "lblPrecio";
+            lblPrecio.Size = new Size(120, 20);
+            lblPrecio.TabIndex = 10;
+            lblPrecio.Text = "Precio:";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(160, 227);
-            this.txtPrecio.Size = new System.Drawing.Size(180, 20);
+            txtPrecio.Location = new Point(160, 227);
+            txtPrecio.Name = "txtPrecio";
+            txtPrecio.Size = new Size(180, 23);
+            txtPrecio.TabIndex = 11;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(80, 280);
-            this.btnGuardar.Size = new System.Drawing.Size(100, 35);
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            btnGuardar.Location = new Point(205, 314);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(100, 35);
+            btnGuardar.TabIndex = 12;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(200, 280);
-            this.btnCancelar.Size = new System.Drawing.Size(100, 35);
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.Location = new Point(88, 314);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 35);
+            btnCancelar.TabIndex = 13;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnExaminarImagen
+            // 
+            btnExaminarImagen.Location = new Point(160, 269);
+            btnExaminarImagen.Name = "btnExaminarImagen";
+            btnExaminarImagen.Size = new Size(180, 23);
+            btnExaminarImagen.TabIndex = 14;
+            btnExaminarImagen.Text = "Subir Imagen";
+            btnExaminarImagen.UseVisualStyleBackColor = true;
+            btnExaminarImagen.Click += button1_Click;
+            // 
+            // pbCaratula
+            // 
+            pbCaratula.BackColor = SystemColors.ButtonHighlight;
+            pbCaratula.Location = new Point(384, 70);
+            pbCaratula.Name = "pbCaratula";
+            pbCaratula.Size = new Size(110, 140);
+            pbCaratula.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCaratula.TabIndex = 15;
+            pbCaratula.TabStop = false;
             // 
             // FormRegistrarVideojuego
             // 
-            this.ClientSize = new System.Drawing.Size(380, 350);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtId);
-            this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.txtTitulo);
-            this.Controls.Add(this.lblPlataforma);
-            this.Controls.Add(this.txtPlataforma);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.lblPrecio);
-            this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCancelar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormRegistrarVideojuego";
-            this.Text = "Registrar Nuevo Videojuego";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(506, 373);
+            Controls.Add(pbCaratula);
+            Controls.Add(btnExaminarImagen);
+            Controls.Add(lblId);
+            Controls.Add(txtId);
+            Controls.Add(lblTitulo);
+            Controls.Add(txtTitulo);
+            Controls.Add(lblPlataforma);
+            Controls.Add(txtPlataforma);
+            Controls.Add(lblCategoria);
+            Controls.Add(txtCategoria);
+            Controls.Add(lblStock);
+            Controls.Add(txtStock);
+            Controls.Add(lblPrecio);
+            Controls.Add(txtPrecio);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnCancelar);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormRegistrarVideojuego";
+            Text = "Registrar Nuevo Videojuego";
+            Load += FormRegistrarVideojuego_Load;
+            ((System.ComponentModel.ISupportInitialize)pbCaratula).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -157,5 +212,7 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private Button btnExaminarImagen;
+        private PictureBox pbCaratula;
     }
 }

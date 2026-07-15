@@ -8,18 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Capa_Datos;
+using Capa_Logica;
 
 namespace Capa_Presentacion
 {
     public partial class FormEliminarVideojuego : Form
     {
-        private TablaHash inventario;
+        private SistemaNovas miSistema;
 
-        public FormEliminarVideojuego(TablaHash tablaPrincipal)
+        public FormEliminarVideojuego(SistemaNovas sistemaPrincipal)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.inventario = tablaPrincipal;
+            this.miSistema = sistemaPrincipal;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -33,7 +34,7 @@ namespace Capa_Presentacion
             }
 
             // Validar primero si existe antes de borrar
-            Videojuego juego = inventario.Buscar(id);
+            Videojuego juego = miSistema.BuscarJuego(id);
 
             if (juego != null)
             {
@@ -42,8 +43,8 @@ namespace Capa_Presentacion
 
                 if (confirmacion == DialogResult.Yes)
                 {
-                    // Llama a tu método Eliminar de TablaHash
-                    inventario.Eliminar(id);
+                    
+                    string resultado = miSistema.EliminarVideojuego(id);
                     MessageBox.Show("Videojuego eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
@@ -57,6 +58,11 @@ namespace Capa_Presentacion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FormEliminarVideojuego_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

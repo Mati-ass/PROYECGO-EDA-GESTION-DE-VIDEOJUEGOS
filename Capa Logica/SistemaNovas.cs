@@ -6,29 +6,33 @@ namespace Capa_Logica
 {
     public class SistemaNovas
     {
-        // Instancia de nuestra estructura de datos principal
         private TablaHash inventario;
         private List<Usuario> usuariosRegistrados;
-        // Categorías estrictas permitidas (RF3)
+        private GestorArchivosJSON gestorArchivos;
+        // Categorías estrictas
+
         private readonly List<string> categoriasValidas = new List<string>
         {
             "RPG",
             "Shooter",
             "Deportes",
             "Metroidvania",
-            "Otros"
+            "Otros",
+            "MOBA"
         };
 
         public SistemaNovas()
         {
             inventario = new TablaHash(100);
+            gestorArchivos = new GestorArchivosJSON();
 
-            // Usuarios predeterminados ("quemados" en memoria para el prototipo)
+            // predeterminados
             usuariosRegistrados = new List<Usuario>
-    {
-            new Usuario("admin", "admin123", "Administrador"),
-            new Usuario("cliente1", "jugador2026", "Cliente")
-    };
+            {
+                new Usuario("admin", "admin123", "Administrador"),
+                new Usuario("cliente", "cliente67", "Cliente")
+            };
+            CargarInventarioDesdeArchivo();
         }
 
         // Método de validación de Login
@@ -45,7 +49,7 @@ namespace Capa_Logica
         }
 
         //  MÓDULO CRUD
-        public string ProcesarAltaVideojuego(string id, string titulo, string plataforma, string categoria, double precio, int stock)
+        public string ProcesarAltaVideojuego(string id, string titulo, string plataforma, string categoria, double precio, int stock, string rutaImagen)
         {
             // 1. Validar campos vacíos (modificar para el forms)
             if (string.IsNullOrWhiteSpace(id) || string.IsNullOrWhiteSpace(titulo) || string.IsNullOrWhiteSpace(plataforma))
@@ -70,9 +74,11 @@ namespace Capa_Logica
             }
 
             // 5. Creamos el videojuego y lo insertamos en la estructura
-            Videojuego nuevoJuego = new Videojuego(id, titulo, plataforma, categoria, stock, precio);
+            Videojuego nuevoJuego = new Videojuego(id, titulo, plataforma, categoria, stock, precio, rutaImagen);
 
             inventario.Insertar(nuevoJuego);
+
+            SincronizarArchivo();
             return $"Éxito: '{titulo}' registrado correctamente en el inventario.";
         }
 
@@ -88,6 +94,7 @@ namespace Capa_Logica
             }
 
             inventario.Eliminar(id);
+            SincronizarArchivo();
             return $"Éxito: El juego '{buscado.Titulo}' ha sido dado de baja permanentemente.";
         }
 
@@ -109,8 +116,30 @@ namespace Capa_Logica
             }
 
             buscado.ActualizarStock(cantidadAgregada);
-
+            SincronizarArchivo();
             return $"Éxito: Stock actualizado. El nuevo stock de '{buscado.Titulo}' es {buscado.Stock}.";
+        }
+
+
+        private void SincronizarArchivo()
+        {
+          
+            List<Videojuego> listaActual = inventario.ObtenerTodos();
+            gestorArchivos.GuardarDatos(listaActual);
+        }
+
+        private void CargarInventarioDesdeArchivo()
+        {
+            List<Videojuego> juegosGuardados = gestorArchivos.CargarDatos();
+            foreach (var juego in juegosGuardados)
+            {
+                inventario.Insertar(juego); 
+            }
+        }
+
+        public List<Videojuego> ObtenerListaDeJuegos()
+        {
+            return inventario.ObtenerTodos();
         }
     }
 }

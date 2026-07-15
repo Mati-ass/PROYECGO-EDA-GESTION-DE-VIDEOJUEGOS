@@ -16,6 +16,7 @@ namespace Capa_Presentacion
         // Propiedad pública para que el menú principal pueda obtener el juego creado
         public Videojuego VideojuegoCreado { get; private set; }
 
+        private string rutaImagenSeleccionada = "";
         public FormRegistrarVideojuego()
         {
             InitializeComponent();
@@ -58,6 +59,50 @@ namespace Capa_Presentacion
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void FormRegistrarVideojuego_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog dialog = new OpenFileDialog())
+            {
+                dialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png";
+                dialog.Title = "Seleccionar carátula del videojuego";
+
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+   
+                        string carpetaImagenes = Path.Combine(Application.StartupPath, "Imagenes");
+
+                        if (!Directory.Exists(carpetaImagenes))
+                        {
+                            Directory.CreateDirectory(carpetaImagenes);
+                        }
+
+                        string nombreArchivo = Path.GetFileName(dialog.FileName);
+
+
+                        string rutaDestino = Path.Combine(carpetaImagenes, nombreArchivo);
+
+
+                        File.Copy(dialog.FileName, rutaDestino, true);
+
+                        rutaImagenSeleccionada = nombreArchivo;
+
+                        MessageBox.Show("Imagen cargada y copiada al proyecto con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Hubo un error al copiar la imagen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
