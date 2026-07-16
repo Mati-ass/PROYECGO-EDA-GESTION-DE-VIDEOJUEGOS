@@ -23,6 +23,8 @@
             lblValorInventario = new Label();
             lblMasCaro = new Label();
             btnCerrar = new Button();
+            pbMasCaro = new PictureBox(); // Declaramos el PictureBox
+            ((System.ComponentModel.ISupportInitialize)pbMasCaro).BeginInit();
             SuspendLayout();
             // 
             // lblTituloVentana
@@ -30,7 +32,7 @@
             lblTituloVentana.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold);
             lblTituloVentana.Location = new Point(20, 20);
             lblTituloVentana.Name = "lblTituloVentana";
-            lblTituloVentana.Size = new Size(340, 30);
+            lblTituloVentana.Size = new Size(540, 30); // Agrandado para abarcar el nuevo ancho
             lblTituloVentana.TabIndex = 0;
             lblTituloVentana.Text = "Estadísticas Generales";
             lblTituloVentana.TextAlign = ContentAlignment.TopCenter;
@@ -69,14 +71,23 @@
             lblMasCaro.Font = new Font("Microsoft Sans Serif", 10F);
             lblMasCaro.Location = new Point(30, 190);
             lblMasCaro.Name = "lblMasCaro";
-            lblMasCaro.Size = new Size(320, 45);
+            lblMasCaro.Size = new Size(320, 75); // Agrandamos el alto para que el texto de dos líneas no se corte
             lblMasCaro.TabIndex = 4;
             lblMasCaro.Text = "Videojuego más costoso: N/A";
+            // 
+            // pbMasCaro
+            // 
+            pbMasCaro.BorderStyle = BorderStyle.FixedSingle;
+            pbMasCaro.Location = new Point(370, 70); // Ubicado arriba a la derecha de los datos
+            pbMasCaro.Name = "pbMasCaro";
+            pbMasCaro.Size = new Size(180, 180); // Tamaño ideal para la portada
+            pbMasCaro.TabIndex = 6;
+            pbMasCaro.TabStop = false;
             // 
             // btnCerrar
             // 
             btnCerrar.Cursor = Cursors.Hand;
-            btnCerrar.Location = new Point(130, 260);
+            btnCerrar.Location = new Point(230, 280); // Centrado con respecto al nuevo ancho del formulario
             btnCerrar.Name = "btnCerrar";
             btnCerrar.Size = new Size(120, 35);
             btnCerrar.TabIndex = 5;
@@ -86,18 +97,21 @@
             // 
             // FormEstadisticas
             // 
-            ClientSize = new Size(380, 320);
+            // Ampliamos el ancho de 380 a 580 píxeles para acomodar el PictureBox
+            ClientSize = new Size(580, 340);
             Controls.Add(lblTituloVentana);
             Controls.Add(lblTotalJuegos);
             Controls.Add(lblStockTotal);
             Controls.Add(lblValorInventario);
             Controls.Add(lblMasCaro);
+            Controls.Add(pbMasCaro); // Añadimos el PictureBox a los controles del formulario
             Controls.Add(btnCerrar);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
             Name = "FormEstadisticas";
             Text = "Estadísticas del Sistema";
             Load += FormEstadisticas_Load;
+            ((System.ComponentModel.ISupportInitialize)pbMasCaro).EndInit();
             ResumeLayout(false);
         }
 
@@ -109,5 +123,7 @@
         private System.Windows.Forms.Label lblValorInventario;
         private System.Windows.Forms.Label lblMasCaro;
         private System.Windows.Forms.Button btnCerrar;
+        // Definición de nuestro nuevo control de imagen
+        private System.Windows.Forms.PictureBox pbMasCaro;
     }
 }

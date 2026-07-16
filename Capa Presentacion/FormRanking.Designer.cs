@@ -22,13 +22,15 @@
             this.btnTopPrecio = new System.Windows.Forms.Button();
             this.btnTopStock = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pbCaratulaRanking = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaratulaRanking)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.Location = new System.Drawing.Point(20, 15);
-            this.lblTitulo.Size = new System.Drawing.Size(360, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(580, 25); // Ampliado para cubrir el nuevo ancho
             this.lblTitulo.Text = "Rankings del Inventario (Top 5)";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -40,6 +42,15 @@
             this.txtRanking.ReadOnly = true;
             this.txtRanking.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRanking.Size = new System.Drawing.Size(360, 160);
+            // 
+            // pbCaratulaRanking
+            // 
+            this.pbCaratulaRanking.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCaratulaRanking.Location = new System.Drawing.Point(400, 95); // Colocado perfectamente a la derecha del TextBox
+            this.pbCaratulaRanking.Name = "pbCaratulaRanking";
+            this.pbCaratulaRanking.Size = new System.Drawing.Size(200, 160); // Tamaño proporcional para la imagen
+            this.pbCaratulaRanking.TabIndex = 6;
+            this.pbCaratulaRanking.TabStop = false;
             // 
             // btnTopPrecio
             // 
@@ -59,7 +70,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(150, 270);
+            this.btnCerrar.Location = new System.Drawing.Point(260, 270); // Re-centrado proporcionalmente
             this.btnCerrar.Size = new System.Drawing.Size(100, 30);
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -67,16 +78,19 @@
             // 
             // FormRanking
             // 
-            this.ClientSize = new System.Drawing.Size(400, 320);
+            // Cambiamos el ancho de 400 a 620 para que entre de forma limpia el PictureBox
+            this.ClientSize = new System.Drawing.Size(620, 320);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnTopPrecio);
             this.Controls.Add(this.btnTopStock);
             this.Controls.Add(this.txtRanking);
+            this.Controls.Add(this.pbCaratulaRanking); // Agregamos el control de imagen al formulario
             this.Controls.Add(this.btnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormRanking";
             this.Text = "Panel de Clasificaciones";
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaratulaRanking)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -88,5 +102,7 @@
         private System.Windows.Forms.Button btnTopPrecio;
         private System.Windows.Forms.Button btnTopStock;
         private System.Windows.Forms.Button btnCerrar;
+        // Definición del nuevo PictureBox para cargar las imágenes de los videojuegos
+        private System.Windows.Forms.PictureBox pbCaratulaRanking;
     }
 }

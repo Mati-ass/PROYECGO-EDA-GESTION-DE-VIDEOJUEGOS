@@ -23,6 +23,8 @@
             this.lblResultado = new System.Windows.Forms.Label();
             this.txtResultado = new System.Windows.Forms.TextBox();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.pbCaratulaBuscar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaratulaBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // lblId
@@ -56,11 +58,20 @@
             this.txtResultado.Multiline = true;
             this.txtResultado.ReadOnly = true;
             this.txtResultado.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtResultado.Size = new System.Drawing.Size(310, 130);
+            this.txtResultado.Size = new System.Drawing.Size(310, 180);
+            // 
+            // pbCaratulaBuscar
+            // 
+            this.pbCaratulaBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbCaratulaBuscar.Location = new System.Drawing.Point(365, 135);
+            this.pbCaratulaBuscar.Name = "pbCaratulaBuscar";
+            this.pbCaratulaBuscar.Size = new System.Drawing.Size(180, 180);
+            this.pbCaratulaBuscar.TabIndex = 6;
+            this.pbCaratulaBuscar.TabStop = false;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(135, 280);
+            this.btnCerrar.Location = new System.Drawing.Point(235, 340);
             this.btnCerrar.Size = new System.Drawing.Size(100, 30);
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -68,17 +79,20 @@
             // 
             // FormBuscarVideojuego
             // 
-            this.ClientSize = new System.Drawing.Size(380, 330);
+            // Ampliamos el ancho a 580 para que quepa la carátula al lado derecho
+            this.ClientSize = new System.Drawing.Size(580, 390);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.txtResultado);
+            this.Controls.Add(this.pbCaratulaBuscar);
             this.Controls.Add(this.btnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "FormBuscarVideojuego";
             this.Text = "Buscar Videojuego";
+            ((System.ComponentModel.ISupportInitialize)(this.pbCaratulaBuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -91,5 +105,7 @@
         private System.Windows.Forms.Label lblResultado;
         private System.Windows.Forms.TextBox txtResultado;
         private System.Windows.Forms.Button btnCerrar;
+        // Declaramos el PictureBox para que el compilador lo reconozca
+        private System.Windows.Forms.PictureBox pbCaratulaBuscar;
     }
 }
