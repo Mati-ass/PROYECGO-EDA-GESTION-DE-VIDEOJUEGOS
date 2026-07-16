@@ -11,10 +11,9 @@
         public int HorasJugadas { get; set; }
         public double Precio { get; set; }
 
-        private string rutaImagen;
-        public string RutaImagen { get => rutaImagen; set => rutaImagen = value; }
+        public string RutaImagen { get; set; }
         public Videojuego() { }
-        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial, double precio, string rutaImagen="")
+        public Videojuego(string id, string titulo, string plataforma, string categoria, int stockInicial, double precio, string rutaImagen)
         {
             Id = id;
             Titulo = titulo;

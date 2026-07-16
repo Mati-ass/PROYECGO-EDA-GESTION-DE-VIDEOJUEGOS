@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace Capa_Presentacion
                 double precio = double.Parse(txtPrecio.Text.Trim());
 
                 // 3. Instanciar el objeto Videojuego
-                VideojuegoCreado = new Videojuego(id, titulo, plataforma, categoria, stock, precio);
+                VideojuegoCreado = new Videojuego(id, titulo, plataforma, categoria, stock, precio,rutaImagenSeleccionada);
 
                 // 4. Cerrar el formulario indicando éxito
                 this.DialogResult = DialogResult.OK;
@@ -75,26 +76,25 @@ namespace Capa_Presentacion
 
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
+
                     try
                     {
-   
-                        string carpetaImagenes = Path.Combine(Application.StartupPath, "Imagenes");
+                        string carpetaDestino = Path.Combine(Application.StartupPath, "Imagenes");
 
-                        if (!Directory.Exists(carpetaImagenes))
+                        if (!Directory.Exists(carpetaDestino))
                         {
-                            Directory.CreateDirectory(carpetaImagenes);
+                            Directory.CreateDirectory(carpetaDestino);
                         }
 
                         string nombreArchivo = Path.GetFileName(dialog.FileName);
+                        string rutaCompletaDestino = Path.Combine(carpetaDestino, nombreArchivo);
+                        
 
-
-                        string rutaDestino = Path.Combine(carpetaImagenes, nombreArchivo);
-
-
-                        File.Copy(dialog.FileName, rutaDestino, true);
+                        File.Copy(dialog.FileName, rutaCompletaDestino, true);
 
                         rutaImagenSeleccionada = nombreArchivo;
-
+                        pbCaratula.ImageLocation = rutaCompletaDestino;
+                        pbCaratula.SizeMode = PictureBoxSizeMode.Zoom;
                         MessageBox.Show("Imagen cargada y copiada al proyecto con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
